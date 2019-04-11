@@ -36,6 +36,15 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'view' => [
+            'theme' => [
+                'pathMap' => [
+                    '@app/views' => ['@app/themes/main'],
+                    // '@vendor/yii2mod/yii2-user/views' => '@app/themes/main/user'
+                ],
+                'baseUrl' => '@web',
+            ],
+        ],
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,

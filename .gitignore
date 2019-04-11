@@ -22,6 +22,7 @@ Thumbs.db
 
 # composer itself is not needed
 composer.phar
+composer.lock
 
 # Mac DS_Store Files
 .DS_Store
@@ -41,3 +42,5 @@ phpunit.phar
 /backend/web/index.php
 /backend/web/index-test.php
 /backend/web/robots.txt
+/frontend/web/theme
+common/upload/

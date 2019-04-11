@@ -11,6 +11,10 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
+    'controllerMap' => [
+        'file' => 'mdm\\upload\\FileController', // use to show or download file
+        'file2' => 'mdm\\upload\\FileController', // use to show or download file
+    ],
     'modules' => [],
     'components' => [
         'request' => [
