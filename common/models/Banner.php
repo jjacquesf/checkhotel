@@ -17,9 +17,17 @@ class Banner extends \yii\db\ActiveRecord
     const TYPE_MAIN = 1;
     const TYPE_SPECIAL = 2;
 
+    const STATUS_ACTIVE = 1;
+    const STATUS_DISABLED = 2;
+
     public $type_options = [
       self::TYPE_MAIN => 'Principal',
       self::TYPE_SPECIAL => 'Promoción',
+    ];
+
+    public $status_options = [
+      self::STATUS_ACTIVE => 'Activo',
+      self::STATUS_DISABLED => 'Deshabilitado',
     ];
 
     /**
@@ -58,8 +66,8 @@ class Banner extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['position', 'type','name'], 'required'],
-            [['position', 'type', 'file_id', 'file2_id'], 'integer'],
+            [['position', 'type','name', 'status'], 'required'],
+            [['position', 'type', 'file_id', 'file2_id','status'], 'integer'],
         ];
     }
 
@@ -75,6 +83,7 @@ class Banner extends \yii\db\ActiveRecord
             'file2_id' => 'Img. Móvil',
             'position' => 'Posición',
             'type' => 'Tipo',
+            'status' => 'Estado',
             'file' => 'Img. Escritorio',
             'file2' => 'Img. Móvil',
         ];

@@ -81,27 +81,45 @@ ThemeAsset::register($this);
         </div>
       </div>
     </div>
+
+    <?php if( !empty($specials) ): ?>
     <div class="row offer" id="specials">
       <div class="col-sm-10 col-sm-offset-1">
         <h2 class="title-default">PROMOCIONES</h2>
         <div id="home-two">
           <div class="slider-pro desktop hidden-xs">
             <div class="sp-slides">
-              <div class="sp-slide"><img class="sp-image" data-default="assets/img/slider-two.jpg" data-retina="assets/img/slider-two.jpg" src="assets/img/slider-two.jpg" style="width: 100%; height: auto; margin-left: 0px; margin-top: -70px;"></div>
-              <div class="sp-slide"><img class="sp-image" data-default="assets/img/slider-two.jpg" data-retina="assets/img/slider-two.jpg" src="assets/img/slider-two.jpg" style="width: 100%; height: auto; margin-left: 0px; margin-top: -70px;"></div>
-              <div class="sp-slide"><img class="sp-image" data-default="assets/img/slider-two.jpg" data-retina="assets/img/slider-two.jpg" src="assets/img/slider-two.jpg" style="width: 100%; height: auto; margin-left: 0px; margin-top: -70px;"></div>
+              <?php foreach($specials as $special): ?>
+                <div class="sp-slide">
+                  <?= Html::img(['/file', 'id' => $special->file_id], [
+                              'class' => 'sp-image',
+                              'data-default' => Url::to(['/file', 'id' => $special->file_id]),
+                              'data-retina' => Url::to(['/file', 'id' => $special->file_id]),
+                              'style' => 'width: 100%; height: auto; margin-left: 0px; margin-top: -70px;'
+                      ]); ?>
+                </div>
+              <?php endforeach; ?>
             </div>
           </div>
           <div class="slider-pro mobile visible-xs">
             <div class="sp-slides">
-              <div class="sp-slide"><img class="sp-image" data-default="assets/img/promos-movil.png" data-retina="assets/img/promos-movil.png" src="assets/img/promos-movil.png" style="width: 100%; height: auto; margin-left: 0px; margin-top: -70px;"></div>
-              <div class="sp-slide"><img class="sp-image" data-default="assets/img/promos-movil.png" data-retina="assets/img/promos-movil.png" src="assets/img/promos-movil.png" style="width: 100%; height: auto; margin-left: 0px; margin-top: -70px;"></div>
-              <div class="sp-slide"><img class="sp-image" data-default="assets/img/promos-movil.png" data-retina="assets/img/promos-movil.png" src="assets/img/promos-movil.png" style="width: 100%; height: auto; margin-left: 0px; margin-top: -70px;"></div>
+              <?php foreach($specials as $special): ?>
+                <div class="sp-slide">
+                  <?= Html::img(['/file', 'id' => $special->file2_id], [
+                              'class' => 'sp-image',
+                              'data-default' => Url::to(['/file', 'id' => $special->file2_id]),
+                              'data-retina' => Url::to(['/file', 'id' => $special->file2_id]),
+                              'style' => 'width: 100%; height: auto; margin-left: 0px; margin-top: -70px;'
+                      ]); ?>
+                </div>
+              <?php endforeach; ?>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <?php endif; ?>
+
     <div class="row providers" id="providers">
       <div class="col-sm-8 col-sm-offset-2">
         <h2 class="title-default">NUESTROS PROVEEDORES</h2>

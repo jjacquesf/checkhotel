@@ -28,6 +28,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'type')->dropDownList($model->type_options) ?>
 
+    <?= $form->field($model, 'status')->dropDownList($model->status_options) ?>
+
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>

@@ -42,6 +42,14 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'position',
             [
+              'class' => 'yii\grid\DataColumn',
+              'attribute' => 'status',
+              'value' => function($model) {
+                return $model->status_options[$model->status];
+              },
+              'filter' => $searchModel->status_options,
+            ],
+            [
               'class' => 'yii\grid\ActionColumn',
               'template' => '{update} {delete}',
             ],

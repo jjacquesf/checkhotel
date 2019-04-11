@@ -17,7 +17,7 @@ class BannerSearch extends Banner
     public function rules()
     {
         return [
-            [['id', 'file_id', 'position', 'type', 'file2_id'], 'integer'],
+            [['id', 'file_id', 'position', 'type', 'file2_id', 'status'], 'integer'],
             [['name'], 'safe'],
         ];
     }
@@ -64,6 +64,7 @@ class BannerSearch extends Banner
             'position' => $this->position,
             'type' => $this->type,
             'file2_id' => $this->file2_id,
+            'status' => $this->status
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name]);
