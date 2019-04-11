@@ -21,14 +21,22 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'file_id',
-            'file2_id',
+            [
+              'class' => 'yii\grid\DataColumn',
+              'attribute' => 'type',
+              'value' => function($model) {
+                return $model->type_options[$model->type];
+              },
+            ],
+            [
+              'class' => 'yii\grid\DataColumn',
+              'attribute' => 'file_id',
+              'value' => function($model) {
+                return Html::img(['/file', 'id' => $model->file_id], ['width' => 300]);
+              },
+              'format' => 'raw',
+            ],
             'position',
-            'type',
-
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

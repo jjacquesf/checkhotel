@@ -16,6 +16,7 @@ return [
         'file2' => 'mdm\\upload\\FileController', // use to show or download file
     ],
     'modules' => [],
+    'language' => 'es',
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',

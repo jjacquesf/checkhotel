@@ -70,10 +70,12 @@ class Banner extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'file_id' => 'Archivo Web',
-            'file2_id' => 'Archivo Móvil',
+            'file_id' => 'Img. Escritorio',
+            'file2_id' => 'Img. Móvil',
             'position' => 'Posición',
             'type' => 'Tipo',
+            'file' => 'Img. Escritorio',
+            'file2' => 'Img. Móvil',
         ];
     }
 }
