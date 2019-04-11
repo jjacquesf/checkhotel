@@ -94,8 +94,8 @@ class Banner extends \yii\db\ActiveRecord
      * @param integer Type of banner defined on type_options
      * @return array of Banner model
      */
-    public static function getModels($type)
+    public static function getModels($type, $status)
     {
-      return self::find()->where(['type' => $type])->orderBy(['position' => SORT_ASC])->all();
+      return self::find()->where(['type' => $type])->andWhere(['status' => $status])->orderBy(['position' => SORT_ASC])->all();
     }
 }

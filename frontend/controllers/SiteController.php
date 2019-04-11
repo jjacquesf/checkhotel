@@ -75,9 +75,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $banners = Banner::getModels(Banner::TYPE_MAIN);
-        $specials = Banner::getModels(Banner::TYPE_SPECIAL);
-        
+
+        $banners = Banner::getModels(Banner::TYPE_MAIN, Banner::STATUS_ACTIVE);
+        $specials = Banner::getModels(Banner::TYPE_SPECIAL, Banner::STATUS_ACTIVE);
+
         return $this->render('index', [
           'banners' => $banners,
           'specials' => $specials,
