@@ -79,4 +79,14 @@ class Banner extends \yii\db\ActiveRecord
             'file2' => 'Img. Móvil',
         ];
     }
+
+    /**
+     * Returns Banner models by type
+     * @param integer Type of banner defined on type_options
+     * @return array of Banner model
+     */
+    public static function getModels($type)
+    {
+      return self::find()->where(['type' => $type])->orderBy(['position' => SORT_ASC])->all();
+    }
 }

@@ -2,6 +2,7 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 use yii\helpers\Html;
+use yii\helpers\Url;
 use frontend\assets\ThemeAsset;
 
 ThemeAsset::register($this);
@@ -31,17 +32,29 @@ ThemeAsset::register($this);
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm-12 px-0">
-        <div class="slider-pro" id="home-one">
-          <div class="sp-slides">
-            <div class="sp-slide"><img class="sp-image" data-small="assets/img/slider-one-mobil.png" data-default="assets/img/slider-one.png" data-retina="assets/img/slider-one.png" src="assets/img/slider-one.png" style="width: 100%; height: auto; margin-left: 0px; margin-top: -70px;"></div>
-            <div class="sp-slide"><img class="sp-image" data-small="assets/img/slider-one-mobil.png" data-default="assets/img/slider-one.png" data-retina="assets/img/slider-one.png" src="assets/img/slider-one.png" style="width: 100%; height: auto; margin-left: 0px; margin-top: -70px;"></div>
-            <div class="sp-slide"><img class="sp-image" data-small="assets/img/slider-one-mobil.png" data-default="assets/img/slider-one.png" data-retina="assets/img/slider-one.png" src="assets/img/slider-one.png" style="width: 100%; height: auto; margin-left: 0px; margin-top: -70px;"></div>
+
+    <?php if( !empty($banners) ): ?>
+      <div class="row">
+        <div class="col-sm-12 px-0">
+          <div class="slider-pro" id="home-one">
+            <div class="sp-slides">
+              <?php foreach($banners as $banner): ?>
+                <div class="sp-slide">
+                  <?= Html::img(['/file', 'id' => $banner->file_id], [
+                              'class' => 'sp-image',
+                              'data-small' => Url::to(['/file', 'id' => $banner->file2_id]),
+                              'data-default' => Url::to(['/file', 'id' => $banner->file_id]),
+                              'data-retina' => Url::to(['/file', 'id' => $banner->file_id]),
+                              'style' => 'width: 100%; height: auto; margin-left: 0px; margin-top: -70px;'
+                      ]); ?>
+                </div>
+              <?php endforeach; ?>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    <?php endif; ?>
+
     <div class="row services" id="services">
       <div class="col-sm-6 col-sm-offset-3">
         <div class="content"><img class="img-responsive mr-4" src="assets/img/reservaciones.png" alt="CheckHotel Reservaciones">
