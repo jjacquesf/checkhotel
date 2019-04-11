@@ -12,6 +12,8 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
+    <?= $form->field($model, 'name')->textInput() ?>
+
     <?= $form->field($model, 'file')->fileInput() ?>
     <?php if(!$model->isNewRecord): ?>
       <?= Html::img(['/file', 'id' => $model->file_id], ['width' => 300, 'alt' => 'Imagen del banner']); ?>

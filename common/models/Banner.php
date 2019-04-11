@@ -58,7 +58,7 @@ class Banner extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['position', 'type'], 'required'],
+            [['position', 'type','name'], 'required'],
             [['position', 'type', 'file_id', 'file2_id'], 'integer'],
         ];
     }
@@ -70,6 +70,7 @@ class Banner extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'name' => 'Nombre',
             'file_id' => 'Img. Escritorio',
             'file2_id' => 'Img. Móvil',
             'position' => 'Posición',
