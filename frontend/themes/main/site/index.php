@@ -4,8 +4,27 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use frontend\assets\ThemeAsset;
+use yii\bootstrap\ActiveForm;
+use yii\captcha\Captcha;
+use yii\web\View;
 
-ThemeAsset::register($this);
+$assets = ThemeAsset::register($this);
+
+$this->registerJs('
+  $("#contact-form").validate({
+    submitHandler: function(form) {
+      $(form).ajaxSubmit({
+        dataType: "json",
+        success: function(response, statusText, xhr, $form) {
+          if( response.success == true ) {
+              $(".contact-form .request").slideUp();
+              $(".contact-form .response").slideDown();
+          }
+        }
+      });
+    }
+  });
+', View::POS_READY);
 
 ?>
 
@@ -14,7 +33,8 @@ ThemeAsset::register($this);
     <div class="row banner-main banner">
       <div class="col-sm-12">
         <div class="row">
-          <div class="col-sm-6 col-md-4 col-md-offset-2 col-lg-2 col-lg-offset-2"><img class="img-responsive" src="assets/img/logo.png" alt="CheckHotel Logo">
+          <div class="col-sm-6 col-md-4 col-md-offset-2 col-lg-2 col-lg-offset-2">
+            <?= Html::img($assets->baseUrl.'/img/logo.png', ['class' => 'img-responsive', 'alt' => 'CheckHotel Logo']); ?>
             <form id="login-form" action="https://www.reservenlinea.com/auth/login" method="post">
               <input id="language" type="hidden" name="language" value="es">
               <div class="form-group">
@@ -57,7 +77,8 @@ ThemeAsset::register($this);
 
     <div class="row services" id="services">
       <div class="col-sm-6 col-sm-offset-3">
-        <div class="content"><img class="img-responsive mr-4" src="assets/img/reservaciones.png" alt="CheckHotel Reservaciones">
+        <div class="content">
+          <?= Html::img($assets->baseUrl.'/img/reservaciones.png', ['class' => 'img-responsive mr-4', 'alt' => 'CheckHotel Reservaciones']); ?>
           <div class="item">
             <h2>RESERVACIONES</h2>
             <p>Te ofrecemos los precios más económicos en las mejores cadenas hoteleras en <br>
@@ -69,9 +90,11 @@ ThemeAsset::register($this);
           <div class="item text-right">
             <h2>NACIONAL E INTERNACIONAL</h2>
             <p>Las mejores tarifas de TOUR, hospedajes nacionales e internacionales</p>
-          </div><img class="img-responsive ml-4" src="assets/img/nacional-internacional.png" alt="CheckHotel Nacional e Internacional">
+          </div>
+          <?= Html::img($assets->baseUrl.'/img/nacional-internacional.png', ['class' => 'img-responsive ml-4', 'alt' => 'CheckHotel Nacional e Internacional']); ?>
         </div>
-        <div class="content"><img class="img-responsive mr-4" src="assets/img/transporte.png" alt="CheckHotel Transporte">
+        <div class="content">
+          <?= Html::img($assets->baseUrl.'/img/transporte.png', ['class' => 'img-responsive mr-4', 'alt' => 'CheckHotel Transporte']); ?>
           <div class="item">
             <h2>TRANSPORTE</h2>
             <p>Adquiere los servicios para transporte y renta de vehículos y autobuses, disfruta <br>
@@ -124,12 +147,24 @@ ThemeAsset::register($this);
       <div class="col-sm-8 col-sm-offset-2">
         <h2 class="title-default">NUESTROS PROVEEDORES</h2>
         <div class="row owl-carousel owl-theme">
-          <div class="col-sm-12 item"><img src="assets/img/hotel1.png" alt="Check Hotel"></div>
-          <div class="col-sm-12 item"><img src="assets/img/hotel2.png" alt="Check Hotel"></div>
-          <div class="col-sm-12 item"><img src="assets/img/hotel3.png" alt="Check Hotel"></div>
-          <div class="col-sm-12 item"><img src="assets/img/hotel4.png" alt="Check Hotel"></div>
-          <div class="col-sm-12 item"><img src="assets/img/hotel5.png" alt="Check Hotel"></div>
-          <div class="col-sm-12 item"><img src="assets/img/hotel6.png" alt="Check Hotel"></div>
+          <div class="col-sm-12 item">
+            <?= Html::img($assets->baseUrl.'/img/hotel1.png', ['alt' => 'Check Hotel']); ?>
+          </div>
+          <div class="col-sm-12 item">
+            <?= Html::img($assets->baseUrl.'/img/hotel2.png', ['alt' => 'Check Hotel']); ?>
+          </div>
+          <div class="col-sm-12 item">
+            <?= Html::img($assets->baseUrl.'/img/hotel3.png', ['alt' => 'Check Hotel']); ?>
+          </div>
+          <div class="col-sm-12 item">
+            <?= Html::img($assets->baseUrl.'/img/hotel4.png', ['alt' => 'Check Hotel']); ?>
+          </div>
+          <div class="col-sm-12 item">
+            <?= Html::img($assets->baseUrl.'/img/hotel5.png', ['alt' => 'Check Hotel']); ?>
+          </div>
+          <div class="col-sm-12 item">
+            <?= Html::img($assets->baseUrl.'/img/hotel6.png', ['alt' => 'Check Hotel']); ?>
+          </div>
         </div>
       </div>
     </div>
@@ -145,7 +180,9 @@ ThemeAsset::register($this);
           con nosotros!
         </p>
       </div>
-      <div class="col-md-12 col-lg-5 px-0"><img class="w-100" src="assets/img/nosotros.png" alt=""></div>
+      <div class="col-md-12 col-lg-5 px-0">
+        <?= Html::img($assets->baseUrl.'/img/nosotros.png', ['class' => 'w-100', 'alt' => 'CheckHotel Nosotros']); ?>
+      </div>
     </div>
     <div class="row mt-3">
       <div class="col-sm-6 col-sm-offset-2">
@@ -161,6 +198,7 @@ ThemeAsset::register($this);
             <div class="row">
               <div class="request col-xs-12">
                 <h2>CONTACTO <span>ESCRÍBENOS</span></h2>
+                <!--
                 <form id="contact" action="send.php" method="post">
                   <div class="form-group">
                     <input class="form-control input-default" type="text" placeholder="Nombre" name="name" required>
@@ -173,7 +211,28 @@ ThemeAsset::register($this);
                   </div>
                   <div class="g-recaptcha my-5" data-sitekey="6LdM-JwUAAAAANTaH6c2PoraGCIWMGyxxiGiI0zB"></div>
                   <button class="btn btn-link" type="submit">ENVIAR</button>
-                </form>
+                </form>-->
+
+                <?php $form = ActiveForm::begin(['id' => 'contact-form', 'enableClientScript' => false, 'action' => ['site/contact']]); ?>
+
+                  <?= $form->field($contact, 'name', ['inputOptions' => ['required' => 'required']])->textInput(['placeholder' => $contact->getAttributeLabel('name')])->label(false); ?>
+
+                  <?= $form->field($contact, 'email', [
+                                                    'inputOptions' => [
+                                                                      'required' => 'required',
+                                                                      'placeholder' => $contact->getAttributeLabel('email')
+                                                                  ]
+                                                ])->label(false); ?>
+
+
+                  <?= $form->field($contact, 'body', ['inputOptions' => ['required' => 'required']])->textarea(['rows' => 10, 'placeholder' => $contact->getAttributeLabel('body')])->label(false); ?>
+                  <div class="g-recaptcha my-5" data-sitekey="6LdM-JwUAAAAANTaH6c2PoraGCIWMGyxxiGiI0zB"></div>
+                  <div class="form-group">
+                      <?= Html::submitButton('ENVIAR', ['class' => 'btn btn-link', 'id' => 'contact-button']) ?>
+                  </div>
+
+                <?php ActiveForm::end(); ?>
+
                 <div class="social-share"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-google-plus-g"></i></a></div>
               </div>
               <div class="response col-xs-12" style="display:none;">
@@ -187,8 +246,12 @@ ThemeAsset::register($this);
             <h3>GRUPOS:</h3><a href="mailto:gruposcheckhotel@hotmail.com">gruposcheckhotel@hotmail.com <br></a><a href="mailto:gruposcheckhotel1@hotmail.com">gruposcheckhotel1@hotmail.com</a>
             <h3>OPERACIONES:</h3><a href="mailto:operacheckhotel@hotmail.com">operacheckhotel@hotmail.com</a>
             <h3>ADMINISTRACIÓN:</h3><a href="mailto:admoncheckhotel@hotmail.com">admoncheckhotel@hotmail.com</a>
-            <h3>GERENCIA GENERAL:</h3><a href="mailto:gerenciacheckhotel@hotmail.com">gerenciacheckhotel@hotmail.com</a><img class="img-responsive mt-5" src="assets/img/logo-footer.png" alt="CheckHotel Logo" style="width:150px;">
-            <div class="arrow"><img class="img-responsive" src="assets/img/arrow-footer.png" alt="CheckHotel Logo" style="height:500px;"></div>
+            <h3>GERENCIA GENERAL:</h3><a href="mailto:gerenciacheckhotel@hotmail.com">gerenciacheckhotel@hotmail.com</a>
+            <?= Html::img($assets->baseUrl.'/img/logo-footer.png', ['class' => 'img-responsive mt-5', 'alt' => 'CheckHotel Logo', 'style' => 'width:150px']); ?>
+            <div class="arrow">
+              <?= Html::img($assets->baseUrl.'/img/arrow-footer.png', ['class' => 'img-responsive', 'alt' => 'CheckHotel Logo', 'style' => 'height:500px']); ?>
+            
+            </div>
           </div>
         </div>
   </div>

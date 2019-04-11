@@ -15,6 +15,7 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use common\models\Banner;
+use yii\web\Response;
 
 /**
  * Site controller
@@ -79,9 +80,12 @@ class SiteController extends Controller
         $banners = Banner::getModels(Banner::TYPE_MAIN);
         $specials = Banner::getModels(Banner::TYPE_SPECIAL);
 
+        $contact = new ContactForm();
+
         return $this->render('index', [
           'banners' => $banners,
           'specials' => $specials,
+          'contact' => $contact
         ]);
     }
 
@@ -127,20 +131,26 @@ class SiteController extends Controller
      */
     public function actionContact()
     {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
-            } else {
-                Yii::$app->session->setFlash('error', 'There was an error sending your message.');
+        \Yii::$app->response->format = Response::FORMAT_JSON;
+
+        if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response']))
+      	{
+  				$secret = '6LdM-JwUAAAAALvofA54_P_L5wrj3FnoHUxtlWm4';
+  				$verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
+  				$responseData = json_decode($verifyResponse);
+  				if($responseData->success) {
+
+            $model = new ContactForm();
+            if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+                if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
+                    return ['success' => true];
+                }
             }
 
-            return $this->refresh();
-        } else {
-            return $this->render('contact', [
-                'model' => $model,
-            ]);
+          }
         }
+        
+        return ['success' => false];
     }
 
     /**
