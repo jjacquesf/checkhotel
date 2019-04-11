@@ -4,7 +4,7 @@ namespace backend\controllers;
 
 use Yii;
 use common\models\Banner;
-use yii\data\ActiveDataProvider;
+use backend\models\BannerSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,11 +35,11 @@ class BannerController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Banner::find(),
-        ]);
+        $searchModel = new BannerSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }

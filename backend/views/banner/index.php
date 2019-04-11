@@ -20,6 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
         'columns' => [
             'name',
             [
@@ -28,6 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
               'value' => function($model) {
                 return $model->type_options[$model->type];
               },
+              'filter' => $searchModel->type_options,
             ],
             [
               'class' => 'yii\grid\DataColumn',
@@ -36,6 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 return Html::img(['/file', 'id' => $model->file_id], ['width' => 300]);
               },
               'format' => 'raw',
+              'filter' => false,
             ],
             'position',
             ['class' => 'yii\grid\ActionColumn'],
