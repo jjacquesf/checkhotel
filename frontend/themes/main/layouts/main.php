@@ -12,6 +12,12 @@ $this->title = Yii::$app->name;
         'content' => 'Te ofrecemos los precios más económicos en las mejores cadenas hoteleras en México y en el mundo.'
     ]);
 
+\Yii::$app->view->registerMetaTag([
+        'name' => 'title',
+        'content' => $this->title
+    ]);
+
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
