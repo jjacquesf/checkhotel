@@ -170,7 +170,7 @@ $this->registerJs('
     </div>
     <div class="row about" id="about">
       <div class="col-md-12 col-lg-7 item">
-        <h1 class="title-default">	¿QUIENES SOMOS?</h1>
+        <h1 class="title-default">	¿QUIÉNES SOMOS?</h1>
         <p>
           Somos una Operadora Mayorista Nacional y nuestros
           principales socios comerciales son los Hoteles y
@@ -250,7 +250,7 @@ $this->registerJs('
             <?= Html::img($assets->baseUrl.'/img/logo-footer.png', ['class' => 'img-responsive mt-5', 'alt' => 'CheckHotel Logo', 'style' => 'width:150px']); ?>
             <div class="arrow">
               <?= Html::img($assets->baseUrl.'/img/arrow-footer.png', ['class' => 'img-responsive', 'alt' => 'CheckHotel Logo', 'style' => 'height:500px']); ?>
-            
+
             </div>
           </div>
         </div>
