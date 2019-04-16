@@ -80,25 +80,32 @@ $this->registerJs('
         <div class="content">
           <?= Html::img($assets->baseUrl.'/img/reservaciones.png', ['class' => 'img-responsive mr-4', 'alt' => 'CheckHotel Reservaciones']); ?>
           <div class="item">
-            <h2>RESERVACIONES</h2>
-            <p>Te ofrecemos los precios más económicos en las mejores cadenas hoteleras en <br>
-              México y en el mundo.
+            <h2>RESERVACIONES DE HOTELES</h2>
+            <p>
+              Agentes de Viajes, les ofrecemos una extensa variedad en Hotelería Nacional e Internacional,
+              ¡contando con reservas de último minuto! De igual manera, para tu comodidad y la de tus clientes,
+              ¡ya puedes realizar pagos con Tarjeta de crédito!
             </p>
           </div>
         </div>
         <div class="content">
           <div class="item text-right">
-            <h2>NACIONAL E INTERNACIONAL</h2>
-            <p>Las mejores tarifas de TOUR, hospedajes nacionales e internacionales</p>
+            <h2>TOURS Y TRASLADOS</h2>
+            <p>
+              Contamos con varios Tours a nivel Nacional, Parques temáticos y Traslados en diferentes ciudades.
+              Esto con el beneficio de ofrecer un servicio más completo para tus clientes en sus distintos viajes.
+            </p>
           </div>
           <?= Html::img($assets->baseUrl.'/img/nacional-internacional.png', ['class' => 'img-responsive ml-4', 'alt' => 'CheckHotel Nacional e Internacional']); ?>
         </div>
         <div class="content">
           <?= Html::img($assets->baseUrl.'/img/transporte.png', ['class' => 'img-responsive mr-4', 'alt' => 'CheckHotel Transporte']); ?>
           <div class="item">
-            <h2>TRANSPORTE</h2>
-            <p>Adquiere los servicios para transporte y renta de vehículos y autobuses, disfruta <br>
-              de unas vacaciones placenteras con nuestra más moderna flota
+            <h2>BAJAFERRIES</h2>
+            <p>
+              Somos el Operador Mayorista autorizado por Bajaferries para la venta de su boletaje en pasajes,
+              cabinas y transportación de autos (no comerciales). Sobre las tarifas públicas te comisionamos,
+              así que !no es necesario aumentar su precio!
             </p>
           </div>
         </div>
@@ -148,22 +155,96 @@ $this->registerJs('
         <h2 class="title-default">NUESTROS PROVEEDORES</h2>
         <div class="row owl-carousel owl-theme">
           <div class="col-sm-12 item">
-            <?= Html::img($assets->baseUrl.'/img/hotel1.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-1.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-2.png', ['alt' => 'Check Hotel']); ?>
           </div>
           <div class="col-sm-12 item">
-            <?= Html::img($assets->baseUrl.'/img/hotel2.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-3.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-4.png', ['alt' => 'Check Hotel']); ?>
           </div>
           <div class="col-sm-12 item">
-            <?= Html::img($assets->baseUrl.'/img/hotel3.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-5.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-6.png', ['alt' => 'Check Hotel']); ?>
           </div>
           <div class="col-sm-12 item">
-            <?= Html::img($assets->baseUrl.'/img/hotel4.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-7.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-8.png', ['alt' => 'Check Hotel']); ?>
           </div>
           <div class="col-sm-12 item">
-            <?= Html::img($assets->baseUrl.'/img/hotel5.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-9.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-10.png', ['alt' => 'Check Hotel']); ?>
           </div>
           <div class="col-sm-12 item">
-            <?= Html::img($assets->baseUrl.'/img/hotel6.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-11.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-12.png', ['alt' => 'Check Hotel']); ?>
+          </div>
+          <div class="col-sm-12 item">
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-13.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-14.png', ['alt' => 'Check Hotel']); ?>
+          </div>
+          <div class="col-sm-12 item">
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-15.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-16.png', ['alt' => 'Check Hotel']); ?>
+          </div>
+          <div class="col-sm-12 item">
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-17.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-18.png', ['alt' => 'Check Hotel']); ?>
+          </div>
+          <div class="col-sm-12 item">
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-19.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-20.png', ['alt' => 'Check Hotel']); ?>
+          </div>
+          <div class="col-sm-12 item">
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-21.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-22.png', ['alt' => 'Check Hotel']); ?>
+          </div>
+          <div class="col-sm-12 item">
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-23.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-24.png', ['alt' => 'Check Hotel']); ?>
+          </div>
+          <div class="col-sm-12 item">
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-25.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-26.png', ['alt' => 'Check Hotel']); ?>
+          </div>
+          <div class="col-sm-12 item">
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-27.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-28.png', ['alt' => 'Check Hotel']); ?>
+          </div>
+          <div class="col-sm-12 item">
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-29.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-30.png', ['alt' => 'Check Hotel']); ?>
+          </div>
+          <div class="col-sm-12 item">
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-31.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-32.png', ['alt' => 'Check Hotel']); ?>
+          </div>
+          <div class="col-sm-12 item">
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-33.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-34.png', ['alt' => 'Check Hotel']); ?>
+          </div>
+          <div class="col-sm-12 item">
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-35.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-36.png', ['alt' => 'Check Hotel']); ?>
+          </div>
+          <div class="col-sm-12 item">
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-37.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-38.png', ['alt' => 'Check Hotel']); ?>
+          </div>
+          <div class="col-sm-12 item">
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-39.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-40.png', ['alt' => 'Check Hotel']); ?>
+          </div>
+          <div class="col-sm-12 item">
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-41.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-42.png', ['alt' => 'Check Hotel']); ?>
+          </div>
+          <div class="col-sm-12 item">
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-43.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-44.png', ['alt' => 'Check Hotel']); ?>
+          </div>
+          <div class="col-sm-12 item">
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-45.png', ['alt' => 'Check Hotel']); ?>
+            <?= Html::img($assets->baseUrl.'/img/proveedores/logos-hotel-46.png', ['alt' => 'Check Hotel']); ?>
           </div>
         </div>
       </div>
@@ -172,12 +253,11 @@ $this->registerJs('
       <div class="col-md-12 col-lg-7 item">
         <h1 class="title-default">	¿QUIÉNES SOMOS?</h1>
         <p>
-          Somos una Operadora Mayorista Nacional y nuestros
-          principales socios comerciales son los Hoteles y
-          Agencias de viajes. Manejamos precios con descuentos y
-          comsiones especiales dependiendo del cliente. Puedes
-          cotizar tu hospedaje con los mejores precios, solo dirígete
-          con nosotros!
+          Iniciamos labores en el 2013 desde esta hermosa Perla del Pacífico: Mazatlán, Sinaloa.
+          Nuestro inicio se impulsa por retos propios y por ese gusto en la atención hacia ustedes,
+          nuestros Agentes de Viajes. Brindamos nuestra labor con servicio y amistad a todos ustedes
+          para mantener una relación fuerte y de confianza. Nuestras frases, "Somos Fans #1 de los
+          viajeros" y "A hospedar", nos acompañan en este trayecto seguido con sus clientes.
         </p>
       </div>
       <div class="col-md-12 col-lg-5 px-0">
