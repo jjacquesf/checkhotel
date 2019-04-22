@@ -322,8 +322,10 @@ $this->registerJs('
             </div>
           </div>
           <div class="col-sm-5">
-            <h3>RESERVACIONES:</h3><a href="mailto:reservascheckhotel@hotmail.com">reservascheckhotel@hotmail.com</a>
-            <h3>GRUPOS:</h3><a href="mailto:gruposcheckhotel@hotmail.com">gruposcheckhotel@hotmail.com <br></a><a href="mailto:gruposcheckhotel1@hotmail.com">gruposcheckhotel1@hotmail.com</a>
+            <h3>RESERVACIONES:</h3>
+            <a href="mailto:reservascheckhotel@hotmail.com">reservascheckhotel@hotmail.com</a><br>
+            <a href="mailto:reservas1checkhotel@hotmail.com">reservas1checkhotel@hotmail.com</a>
+            <h3>GRUPOS:</h3><a href="mailto:gruposcheckhotel@hotmail.com">gruposcheckhotel@hotmail.com <br></a><a href="mailto:grupos1checkhotel@hotmail.com">grupos1checkhotel@hotmail.com</a>
             <h3>OPERACIONES:</h3><a href="mailto:operacheckhotel@hotmail.com">operacheckhotel@hotmail.com</a>
             <h3>ADMINISTRACIÓN:</h3><a href="mailto:admoncheckhotel@hotmail.com">admoncheckhotel@hotmail.com</a>
             <h3>GERENCIA GENERAL:</h3><a href="mailto:gerenciacheckhotel@hotmail.com">gerenciacheckhotel@hotmail.com</a>
